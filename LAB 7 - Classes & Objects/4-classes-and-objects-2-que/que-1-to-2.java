@@ -39,6 +39,54 @@ Output 2 :
 Encrypted text: K cswzvo mszrob.
 
 
+import java.util.*;
+
+class Cipher {
+    private int key;
+    private String msg;
+    
+    public Cipher(int key,String msg){
+        this.key = key%26;
+        this.msg = msg;
+    }
+    
+    public void encrypt(){
+        StringBuilder encrypted = new StringBuilder(100);
+        
+        for(int i=0 ; i<msg.length() ; i++){
+            char c = msg.charAt(i);
+            
+            if(c>='A' && c<='Z'){
+                char item = (char) ((c-'A' + key)%26 + 'A');
+                encrypted.append(item);
+            }
+            else if(c>='a' && c<='z'){
+                char item = (char) ((c-'a' + key)%26 + 'a');
+                encrypted.append(item);
+            }
+            else {
+                encrypted.append(c);
+            }
+        }
+        
+        System .out.println("Encrypted text: "+encrypted);
+    }
+}
+
+class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int key = sc.nextInt();
+        sc.nextLine();
+        
+        String msg = sc.nextLine();
+        
+        Cipher obj = new Cipher(key,msg);
+        obj.encrypt();
+    }
+}
+
   2.
 
   Problem Statement
@@ -93,3 +141,33 @@ NVDA
 Output 2 :
 Total Portfolio Value: 4340.00
 Total Profit/Loss: 140.00
+import java.util.*;
+
+class Stock {
+    String stockSymbol;
+    double purchasePrice;
+    double currentPrice;
+    int quantity;
+    
+    void display(){
+        double res1 = currentPrice*quantity ;
+        System.out.format("Total Portfolio Value: %.2f\n",res1);
+        
+        double res2 = (currentPrice-purchasePrice)*quantity ;
+        System.out.format("Total Profit/Loss: %.2f",res2);
+        
+    }
+}
+
+class main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        Stock obj = new Stock();
+        obj.stockSymbol = sc.nextLine();
+        obj.purchasePrice = sc.nextDouble();
+        obj.currentPrice = sc.nextDouble();
+        obj.quantity = sc.nextInt();
+        
+        obj.display();
+    }
+}
