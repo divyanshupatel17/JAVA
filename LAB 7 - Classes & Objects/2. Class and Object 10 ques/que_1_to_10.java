@@ -209,6 +209,40 @@ class MAIN {
         sc.close();  
     }  
 }
+// alternative optimal
+import java.util.Scanner;  
+
+class CharacterChecker {  
+    public void checkAlphabetType(char a) {  
+        // Convert character to lowercase to simplify vowel check
+        char lowerChar = Character.toLowerCase(a);
+        
+        // Check if the character is an alphabet
+        if (Character.isLetter(a)) {  
+            // Check if the alphabet is a vowel
+            if (lowerChar == 'a' || lowerChar == 'e' || lowerChar == 'i' || 
+                lowerChar == 'o' || lowerChar == 'u') {  
+                System.out.printf("%c: vowel\n", a);  
+            } else {  
+                // If it's not a vowel, it's a consonant
+                System.out.printf("%c: consonant\n", a);  
+            }  
+        } else {  
+            // If it's not an alphabet
+            System.out.printf("%c: not an alphabet\n", a);  
+        }  
+    }  
+}  
+
+class MAIN {  
+    public static void main(String[] args) {  
+        Scanner sc = new Scanner(System.in);  
+        char a = sc.nextLine().charAt(0); // Read the single character input  
+        CharacterChecker obj = new CharacterChecker();  
+        obj.checkAlphabetType(a);  
+        sc.close();  
+    }  
+}
 
 /**
  4. Problem Statement
