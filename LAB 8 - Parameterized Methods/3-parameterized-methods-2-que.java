@@ -3,7 +3,7 @@ Problem Statement
 
 
 
-Vimal is a network engineer tasked with managing a large company's IP address allocations. To optimize the network, he needs to determine the number of possible subnets based on a given IP address and subnet mask. 
+Vimal is a network engineer tasked with managing a large companys IP address allocations. To optimize the network, he needs to determine the number of possible subnets based on a given IP address and subnet mask. 
 
 
 
@@ -91,7 +91,7 @@ Viraj is learning about permutations and wants to develop a program that can gen
 Help Viraj to include a parameterized method named generatePermutations to accomplish this task.
 
 Input format :
-The input consists of a string, representing Viraj's input.
+The input consists of a string, representing Virajs input.
 
 Output format :
 The first line of output displays "Permutations of the string:"

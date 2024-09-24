@@ -410,7 +410,9 @@ import java.util.*;
 class main {
     public static boolean isArmstrong(int num){
         int digits = String.valueOf(num).length();
-        // int digits = (int) Math.log10(num) +1;
+        // int digits = num.toString().length();                  // wrong
+        // int digits = Integer.toString(primitiveNum).length();  // alternative
+        // int digits = (int) Math.log10(num) +1;                 // alternative
         int sum = 0,temp = num;
         while(temp!=0){
             int d = temp%10;

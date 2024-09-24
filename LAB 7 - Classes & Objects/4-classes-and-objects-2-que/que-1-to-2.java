@@ -71,6 +71,22 @@ class Cipher {
         
         System .out.println("Encrypted text: "+encrypted);
     }
+    /*
+    public void encrypt() {
+    StringBuilder encrypted = new StringBuilder();
+
+    for (char c : msg.toCharArray()) {
+        if (Character.isLetter(c)) {
+            char base = Character.isUpperCase(c) ? 'A' : 'a';
+            char item = (char) ((c - base + key) % 26 + base);
+            encrypted.append(item);
+        } else {
+            encrypted.append(c);
+        }
+    }
+
+    System.out.println("Encrypted text: " + encrypted);
+    */
 }
 
 class Main {
