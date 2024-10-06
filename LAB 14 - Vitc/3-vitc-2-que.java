@@ -40,6 +40,41 @@ try
 catch
 throw
 
+class PermutationCalculator {
+
+    public static void main(String[] args) {
+        // Example input
+        int N = 5;  // Can be modified for testing
+
+        try {
+            long result = calculatePermutations(N);
+            System.out.println(result);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    // Method to calculate permutations (N!) and throw exception for negative N
+    public static long calculatePermutations(int N) {
+        if (N < 0) {
+            throw new IllegalArgumentException("Error: Negative value of N");
+        }
+
+        return factorial(N);
+    }
+
+    // Helper method to calculate factorial (N!)
+    public static long factorial(int N) {
+        long fact = 1;
+        for (int i = 2; i <= N; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+}
+
+
+2.
 Problem Statement
 
 
