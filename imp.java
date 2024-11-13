@@ -54,6 +54,7 @@ class Main {
 
         // Array methods
         int[] arr = {5, 3, 8, 1};
+        int length = arr.length;  // length is 4
         java.util.Arrays.sort(arr); // Sort array
         System.out.println(java.util.Arrays.toString(arr)); // [1, 3, 5, 8] convert array to string
         System.out.println(java.util.Arrays.binarySearch(arr, 3)); // Find index of 3 in sorted array
@@ -2200,3 +2201,31 @@ class FileOperations {
         }
     }
 }
+
+
+======================================================== PERMUTATION ========================================================================
+
+class temp2 {
+    public static void main(String[] args) {
+        String str = "ab12";
+        System.out.println("Permutations of the string:");
+        permute(str, "");
+    }
+
+    // Function to generate permutations
+    static void permute(String str, String prefix) {
+        if (str.length() == 0) {
+            System.out.println(prefix);
+        } else {
+            for (int i = 0; i < str.length(); i++) {
+                permute(str.substring(0, i) + str.substring(i + 1), prefix + str.charAt(i));
+            }
+        }
+    }
+}
+
+========================================================  ========================================================================
+========================================================  ========================================================================
+========================================================  ========================================================================
+========================================================  ========================================================================
+========================================================  ========================================================================

@@ -599,6 +599,43 @@ class Main {
     }
 }
 
+======================
+    public static void main(String[] args) {
+        int[] nums = {12, 18, 24}; // Input array
+        System.out.println("HCF: " + findHCF(nums)); // HCF: 6
+        System.out.println("LCM: " + findLCM(nums)); // LCM: 72
+    }
+
+    // Function to calculate HCF of two numbers
+    static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+
+    // Function to calculate LCM of two numbers
+    static int lcm(int a, int b) {
+        return (a * b) / gcd(a, b);
+    }
+
+    // Function to calculate HCF of an array
+    static int findHCF(int[] nums) {
+        int hcf = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            hcf = gcd(hcf, nums[i]);
+        }
+        return hcf;
+    }
+
+    // Function to calculate LCM of an array
+    static int findLCM(int[] nums) {
+        int lcm = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            lcm = lcm(lcm, nums[i]);
+        }
+        return lcm;
+    }
+======================
+
+
 9.
 Problem Statement
 
