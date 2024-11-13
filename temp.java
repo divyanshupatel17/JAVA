@@ -1,3 +1,26 @@
+1. Banking System Flowchart
+
+                 +-------------------+
+                 | AccountOperations |
+                 |   (Interface)     |
+                 +-------------------+
+                        /|\
+                         |
+          +-------------------------------+
+          |        BankAccount            |
+          |  (Abstract Class)             |
+          +-------------------------------+
+                         |
+       +-------------------------------------+
+       |                                     |
++-------------------+               +-------------------+
+|  SavingsAccount   |               |  CurrentAccount   |
++-------------------+               +-------------------+
+            |                                   |
++-------------------------------+    +---------------------------+
+| FixedDepositAccount (Final)  |    |   Overdraft Management    |
++-------------------------------+    +---------------------------+
+
 import java.util.*;
 
 // Interface representing basic account operations
@@ -213,6 +236,23 @@ public class BankingSystem {
     }
 }
 
+2.
+        +---------------+
+        |     Book      |
+        | (Abstract Class) |
+        +---------------+
+              /|\
+               |
+   +-------------------------+
+   |                         |
++-------------------+  +----------------+
+| PhysicalBook      |  | ElectronicBook |
++-------------------+  +----------------+
+          |                      |
+  +-------------------+    +---------------------+
+  | Borrow Behavior   |    | Download Feature    |
+  +-------------------+    +---------------------+
+
 
 class Book {
     private String title;
@@ -288,6 +328,29 @@ public class Main {
     }
 }
 
+3. Library Management System
+
+            +----------------+
+            |   Borrowable   |
+            |   (Interface)  |
+            +----------------+
+                   /|\
+                    |
+          +-----------------------+
+          |        Member         |
+          | (Abstract Class)      |
+          +-----------------------+
+                   /|\
+                    |
+       +-------------------------+
+       |                         |
++-------------------+     +----------------+
+|    Student        |     |    Faculty     |
++-------------------+     +----------------+
+              |
+  +-----------------------+
+  | Borrow/Return Books   |
+  +-----------------------+
 
 
 import java.util.ArrayList;
