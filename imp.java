@@ -2,6 +2,7 @@
 
 
 
+
 class Main {
     public static void main(String[] args) {
         // String methods
@@ -50,6 +51,18 @@ class Main {
         System.out.println(Character.isJavaIdentifierStart('A')); // Checks valid start for identifier
         System.out.println(Character.getNumericValue('7')); // Gets numeric value
         System.out.println(Character.toString('Z'));        // Converts char to String
+
+        // Array methods
+        int[] arr = {5, 3, 8, 1};
+        java.util.Arrays.sort(arr); // Sort array
+        System.out.println(java.util.Arrays.toString(arr)); // [1, 3, 5, 8] convert array to string
+        System.out.println(java.util.Arrays.binarySearch(arr, 3)); // Find index of 3 in sorted array
+        int[] arr2 = java.util.Arrays.copyOf(arr, 6); // Copy array with new size
+        System.out.println(java.util.Arrays.toString(arr2)); // [1, 3, 5, 8, 0, 0] extend array
+        System.out.println(java.util.Arrays.equals(arr, arr2)); // Compare arrays
+        java.util.Arrays.fill(arr2, 9); // Fill all with 9
+        System.out.println(java.util.Arrays.toString(arr2)); // [9, 9, 9, 9, 9, 9] fill array with 9
+
 
         // Integer methods and conversions
         int num = 42;
