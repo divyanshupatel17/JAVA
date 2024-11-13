@@ -43,6 +43,7 @@ class Main {
         char ch = 'A';
         System.out.println(Character.isLetter(ch));         // Checks if letter
         System.out.println(Character.isDigit(ch));          // Checks if digit
+        System.out.println(Character.isLetterOrDigit(ch));         // Checks if letter or dogot
         System.out.println(Character.isLowerCase(ch));      // Checks if lowercase
         System.out.println(Character.isUpperCase(ch));      // Checks if uppercase
         System.out.println(Character.toLowerCase(ch));      // Converts to lowercase
