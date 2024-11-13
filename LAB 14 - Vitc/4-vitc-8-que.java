@@ -8,7 +8,7 @@ Create a Java program to check whether a given set of side lengths forms a valid
 
 
 
-The program takes three integers as input, representing the lengths of the sides, and uses the isValidTriangle method to determine if it's a valid triangle. 
+The program takes three integers as input, representing the lengths of the sides, and uses the isValidTriangle method to determine if its a valid triangle. 
 
 
 
@@ -149,6 +149,9 @@ class Main {
             try {
                 Scanner sc = new Scanner(System.in);
                 // int n = sc.nextInt();   -> wrong
+                // if(!sc.hasNextInt()){   -> correct
+                //     throw new NumberFormatException();
+                // }
                 String ip = sc.nextLine();
                 int n = Integer.parseInt(ip);
                 int postInt = n++;
