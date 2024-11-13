@@ -1,49 +1,76 @@
 ======================================================== METHODS ========================================================================
 
 
-public class Main {
+
+class Main {
     public static void main(String[] args) {
         // String methods
-        String str = "Hello World";
-        System.out.println(str.length());                    // 11
-        System.out.println(str.charAt(0));                   // H
-        System.out.println(str.toUpperCase());              // HELLO WORLD
-        System.out.println(str.toLowerCase());              // hello world
-        System.out.println(str.contains("World"));          // true
-        System.out.println(str.substring(0, 5));            // Hello
-        System.out.println(str.replace("World", "Java"));   // Hello Java
-        System.out.println(str.trim());                     // Remove whitespace
-        System.out.println(str.indexOf("o"));               // 4
-        System.out.println(str.split(" ")[0]);             // Hello
-        
+        String str = "   Hello World   ";
+        System.out.println(str.trim());                     // Removes leading/trailing spaces
+        System.out.println(str.toUpperCase());              // Converts to uppercase
+        System.out.println(str.toLowerCase());              // Converts to lowercase
+        System.out.println(str.concat("!!!"));              // Appends another string
+        System.out.println(str.replace("o", "x"));          // Replaces 'o' with 'x'
+        System.out.println(str.charAt(6));                  // Gets character at index 6
+        System.out.println(str.indexOf("o"));               // Finds first occurrence of 'o'
+        System.out.println(str.lastIndexOf("o"));           // Finds last occurrence of 'o'
+        System.out.println(str.contains("World"));          // Checks if substring exists
+        System.out.println(str.startsWith("   H"));         // Checks prefix
+        System.out.println(str.endsWith("   "));            // Checks suffix
+        System.out.println(str.length());                   // Length of string
+        System.out.println(str.substring(3, 8));            // Extracts substring
+        System.out.println(str.equals("Hello World"));      // Checks equality
+        System.out.println(str.equalsIgnoreCase("   HELLO WORLD   ")); // Ignores case in equality
+        System.out.println(str.isBlank());                  // Checks if blank
+        System.out.println(str.isEmpty());                  // Checks if empty
+        System.out.println(java.util.Arrays.toString(str.toCharArray())); // Converts to char array
+        System.out.println(str.repeat(2));                  // Repeats string
+        System.out.println(str.split(" ")[1]);              // Splits and retrieves part
+
         // StringBuilder methods
         StringBuilder sb = new StringBuilder("Hello");
-        System.out.println(sb.append(" World"));           // Hello World
-        System.out.println(sb.insert(5, "!"));            // Hello! World
-        System.out.println(sb.delete(5, 6));              // Hello World
-        System.out.println(sb.reverse());                 // dlroW olleH
-        System.out.println(sb.charAt(0));                 // d
-        System.out.println(sb.length());                  // 10
-        System.out.println(sb.substring(0, 5));           // dlroW
-        System.out.println(sb.replace(0, 5, "Hi"));      // Hi olleH
-        
+        System.out.println(sb.append(" World"));            // Appends string
+        System.out.println(sb.insert(5, "!"));              // Inserts at position
+        System.out.println(sb.delete(5, 6));                // Deletes range
+        System.out.println(sb.reverse());                   // Reverses string
+        System.out.println(sb.replace(0, 5, "Hi"));         // Replaces range
+        System.out.println(sb.substring(0, 2));             // Extracts substring
+        System.out.println(sb.capacity());                  // Gets capacity
+        System.out.println(sb.toString());                  // Converts to String
+
         // Character methods
         char ch = 'A';
-        System.out.println(Character.isDigit(ch));          // false
-        System.out.println(Character.isLetter(ch));         // true
-        System.out.println(Character.isWhitespace(ch));     // false
-        System.out.println(Character.toLowerCase(ch));      // a
-        System.out.println(Character.toUpperCase('a'));     // A
-        
-        // Integer methods
+        System.out.println(Character.isLetter(ch));         // Checks if letter
+        System.out.println(Character.isDigit(ch));          // Checks if digit
+        System.out.println(Character.isLowerCase(ch));      // Checks if lowercase
+        System.out.println(Character.isUpperCase(ch));      // Checks if uppercase
+        System.out.println(Character.toLowerCase(ch));      // Converts to lowercase
+        System.out.println(Character.toUpperCase('b'));     // Converts to uppercase
+        System.out.println(Character.isWhitespace(' '));    // Checks whitespace
+        System.out.println(Character.isJavaIdentifierStart('A')); // Checks valid start for identifier
+        System.out.println(Character.getNumericValue('7')); // Gets numeric value
+        System.out.println(Character.toString('Z'));        // Converts char to String
+
+        // Integer methods and conversions
         int num = 42;
+
+        // Radix-based conversions
+        String binaryFromDecimal = Integer.toString(num, 2);      // Decimal to binary
+        String octalFromDecimal = Integer.toString(num, 8);       // Decimal to octal
+        String hexFromDecimal = Integer.toString(num, 16);        // Decimal to hexadecimal
+        int decimalFromBinary = Integer.parseInt("101010", 2);    // Binary to decimal
+        int decimalFromOctal = Integer.parseInt("52", 8);         // Octal to decimal
+        int decimalFromHex = Integer.parseInt("2A", 16);          // Hexadecimal to decimal
+
+        // Integer utility methods
+        System.out.println(Integer.bitCount(num));                // Number of 1 bits in binary
+        System.out.println(Integer.reverse(num));                 // Reverses binary bits
+        System.out.println(Integer.toString(num));                // M1. Converts to String
+        System.out.println(String.valueOf(num));                  // M2. Converts to String using valueOf
         System.out.println(Integer.parseInt("123"));        // 123
-        System.out.println(Integer.toString(num));          // "42"
-        System.out.println(Integer.toBinaryString(num));    // 101010
-        System.out.println(Integer.toHexString(num));       // 2a
         System.out.println(Integer.MAX_VALUE);              // 2147483647
         System.out.println(Integer.compare(num, 100));      // -1
-        
+
         // Double methods
         double dbl = 45.67;
         System.out.println(Double.parseDouble("123.45"));   // 123.45
@@ -61,41 +88,34 @@ public class Main {
         System.out.println(Math.pow(2, 3));                // 8.0
         System.out.println(Math.sqrt(25));                 // 5.0
         System.out.println(Math.random());                 // random 0.0 to 1.0
-        
+
         // Type Conversions
         // String to other types
         String numStr = "123";
-        int strToInt = Integer.parseInt(numStr);           // String to int
-        double strToDouble = Double.parseDouble(numStr);   // String to double
-        char strToChar = numStr.charAt(0);                // String to char
-        
-        // Int to other types
+        int strToInt = Integer.parseInt(numStr);                  // Converts String to int
+        double strToDouble = Double.parseDouble(numStr);          // Converts String to double
+        char strToChar = numStr.charAt(0);                        // Converts String to char
+
+        // int to String
         int number = 65;
-        String intToStr = String.valueOf(number);         // int to String
-        double intToDouble = (double) number;             // int to double
-        char intToChar = (char) number;                   // int to char (ASCII)
-        
-        // Double to other types
-        double decimal = 123.456;
-        String doubleToStr = String.valueOf(decimal);     // double to String
-        int doubleToInt = (int) decimal;                 // double to int
-        
-        // Char to other types
-        char character = '9';
-        String charToStr = String.valueOf(character);     // char to String
-        int charToInt = Character.getNumericValue(character);  // char to int
-        int charToAscii = (int) character;               // char to ASCII value
-        
+        String intToStr1 = Integer.toString(number);              // M1. Using Integer.toString
+        String intToStr2 = String.valueOf(number);                // M2. Using String.valueOf
+        double intToDouble = (double) number;                     // Converts int to double
+        char intToChar = (char) number;                           // Converts int to char
+
+        // double to other types
+        double decimal = 45.6;
+        String doubleToStr = Double.toString(decimal);            // Converts double to String
+        int doubleToInt = (int) decimal;                          // Converts double to int
+
+        // char to other types
+        char c = '7';
+        int charToInt = Character.getNumericValue(c);             // Converts char to int
+        String charToStr = Character.toString(c);                 // Converts char to String
+
         // Array to String
-        int[] arr = {1, 2, 3};
-        String arrayToStr = java.util.Arrays.toString(arr);  // array to String
-        
-        System.out.println("\nType Conversion Examples:");
-        System.out.println("String to int: " + strToInt);
-        System.out.println("Int to char: " + intToChar);
-        System.out.println("Double to int: " + doubleToInt);
-        System.out.println("Char to int: " + charToInt);
-        System.out.println("Array to String: " + arrayToStr);
+        int[] nums = {1, 2, 3};
+        String arrayToStr = java.util.Arrays.toString(nums);      // Converts array to String
     }
 }
 
