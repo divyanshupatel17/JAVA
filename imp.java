@@ -2203,8 +2203,8 @@ class FileOperations {
 }
 
 
-======================================================== PERMUTATION ========================================================================
-
+================================== USEFUL METHODS : PERMUTATION , Rotate array, isPalindrome, ========================================================================
+1. 
 class temp2 {
     public static void main(String[] args) {
         String str = "ab12";
@@ -2223,6 +2223,42 @@ class temp2 {
         }
     }
 }
+
+2. 
+void reverse(int[] arr, int s, int e) {
+    while (s < e) {
+        int temp = arr[s];
+        arr[s] = arr[e];
+        arr[e] = temp;
+        s++;
+        e--;
+    }
+}
+
+void rotate(int[] arr, int k, boolean isLeft) {
+    int n = arr.length;
+    k = k % n;  // Handle cases where k is greater than array length
+    if (isLeft) {
+        reverse(arr, 0, k - 1);    // Reverse the first part (0 to k-1)
+        reverse(arr, k, n - 1);     // Reverse the second part (k to end)
+        reverse(arr, 0, n - 1);     // Reverse the entire array
+    } else {
+        k = n - k;  // Adjust k for right rotation
+        reverse(arr, 0, k - 1);     // Reverse the first part (0 to k-1)
+        reverse(arr, k, n - 1);     // Reverse the second part (k to end)
+        reverse(arr, 0, n - 1);     // Reverse the entire array
+    }
+}
+
+3.
+boolean isPalindrome(String str) {
+    return str.equals(new StringBuilder(str).reverse().toString());
+}
+boolean isPalindrome(int num) {
+    return num == Integer.parseInt(new StringBuilder(String.valueOf(num)).reverse().toString());
+}
+
+
 
 ========================================================  ========================================================================
 ========================================================  ========================================================================
