@@ -129,6 +129,67 @@ class Main {
         // Array to String
         int[] nums = {1, 2, 3};
         String arrayToStr = java.util.Arrays.toString(nums);      // Converts array to String
+
+        // ================================================================================================
+        // ================================================================================================
+        // COLLECTION METHODS
+
+        // List of integers
+        List<Integer> list = Arrays.asList(10, 20, 30, 40, 50);
+
+        // sort() - Sorts the list in ascending order
+        // works for: Lists of Integer, String, or other Comparable types
+        Collections.sort(list);
+
+        // reverse() - Reverses the order of elements in the list
+        // works for: Lists of any type
+        Collections.reverse(list);
+
+        // shuffle() - Shuffles elements randomly
+        // works for: Lists of any type
+        Collections.shuffle(list);
+
+        // swap() - Swaps two elements at specified positions
+        // works for: Lists of any type
+        Collections.swap(list, 0, 4);
+
+        // frequency() - Counts occurrences of an element
+        // works for: Lists of any type
+        Collections.frequency(list, 10);
+
+        // max() - Finds the maximum element
+        // works for: Lists of Integer, String, or Comparable types
+        Collections.max(list);
+
+        // min() - Finds the minimum element
+        // works for: Lists of Integer, String, or Comparable types
+        Collections.min(list);
+
+        // binarySearch() - Finds an element's index in a sorted list
+        // works for: Sorted Lists of any type
+        Collections.binarySearch(list, 30);
+
+        // rotate() - Rotates elements in the list by a specified distance
+        // works for: Lists of any type
+        Collections.rotate(list, 2);
+
+        // fill() - Replaces all elements with a specified value
+        // works for: Lists of any type
+        Collections.fill(list, 99);
+
+        // copy() - Copies elements from one list to another (target list must have sufficient size)
+        // works for: Lists of any type
+        List<Integer> copy = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+        Collections.copy(copy, list);
+
+        // addAll() - Adds multiple elements to a collection
+        // works for: Any collection
+        List<String> strList = new ArrayList<>();
+        Collections.addAll(strList, "A", "B", "C");
+
+        // unmodifiableList() - Creates an immutable view of a list
+        // works for: Lists of any type
+        List<Integer> immutableList = Collections.unmodifiableList(list);
     }
 }
 
