@@ -35,6 +35,7 @@ class Main {
         System.out.println(sb.substring(0, 2));             // Extracts substring
         System.out.println(sb.capacity());                  // Gets capacity
         System.out.println(sb.toString());                  // Converts to String
+.chatAt(i) , .setCharAt(i,'a') , .deleteCharAt(i)
 
         // Character methods
         char ch = 'A';
